@@ -4,6 +4,7 @@ import com.mouse.autumn.basicioc.xml.FXNewsBean;
 import com.mouse.autumn.basicioc.xml.IFXNewsListener;
 import com.mouse.autumn.basicioc.xml.IFXNewsPersister;
 import org.apache.commons.lang.ArrayUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * @Title: FXNewsProvider
@@ -20,6 +21,7 @@ public class FXNewsProvider {
     private IFXNewsPersister newsPersister;
 
 
+    @Autowired
     public FXNewsProvider(IFXNewsListener newsListener, IFXNewsPersister newsPersister) {
         this.newsListener = newsListener;
         this.newsPersister = newsPersister;
