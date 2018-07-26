@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="studentA" class="com.mouse.autumn.basicioc.annotion.cycledemo03.StudentA">
+    </bean>
+
+    <bean id="studentB" class="com.mouse.autumn.basicioc.annotion.cycledemo03.StudentB" destroy-method="dy">
+
+    </bean>
+
+
+    <bean id="studentC" class="com.mouse.autumn.basicioc.annotion.cycledemo03.StudentC">
+    </bean>
+
+
+  <!--  <bean id="studentA" class="com.mouse.autumn.basicioc.annotion.cycledemo03.StudentA">
+        <constructor-arg ref="studentB"></constructor-arg>
+    </bean>
+
+    <bean id="studentB" class="com.mouse.autumn.basicioc.annotion.cycledemo03.StudentB">
+        <constructor-arg ref="studentC"></constructor-arg>
+
+    </bean>
+
+
+    <bean id="studentC" class="com.mouse.autumn.basicioc.annotion.cycledemo03.StudentC">
+        <constructor-arg ref="studentA"></constructor-arg>
+    </bean>-->
+
+
+
+</beans>
