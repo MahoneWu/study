@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+    <bean id="newsBean" class="com.mouse.autumn.basicioc.factorybean.ObjectFactoryCreatingFactoryBean01.FXNewsBean" scope="prototype">
+
+    </bean>
+
+
+    <!--idref 使用idref，容器在解析配置的时候就可以帮你检查beanName到底是否存在，而不用等到运行时才发现这个beanName对象实例不存在 -->
+    <!--如果要为当前对象注入所依赖的对象的名称，而不是引用，那么通常情况下，可以使用<value>来达到目的,也可以使用idref -->
+  <bean id="newsBeanFactory" class="org.springframework.beans.factory.config.ObjectFactoryCreatingFactoryBean">
+      <property name="targetBeanName">
+          <idref bean="newsBean"></idref>
+      </property>
+  </bean>
+
+    <bean id="mockPersister" class="com.mouse.autumn.basicioc.factorybean.ObjectFactoryCreatingFactoryBean01.MockNewsPersister">
+        <property name="objectFactory">
+            <ref bean="newsBeanFactory"></ref>
+        </property>
+    </bean>
+
+</beans>
