@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+    <bean id="newsBean" class="com.mouse.autumn.basicioc.factorybean.factorybean02.FXNewsBean" scope="prototype"></bean>
+
+    <!--<bean id="mockPersister" class="com.mouse.autumn.basicioc.factorybean.factorybean02.MockNewsPersister">-->
+        <!--<property name="fxNewsBean">-->
+            <!--<ref bean="newsBean"></ref>-->
+        <!--</property>-->
+    <!--</bean>-->
+
+
+    <bean id="mockPersister" class="com.mouse.autumn.basicioc.factorybean.factorybean02.MockNewsPersister">
+       <lookup-method name="getFxNewsBean" bean="newsBean"></lookup-method>
+    </bean>
+
+</beans>
