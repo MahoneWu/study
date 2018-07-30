@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+
+    <!--<aop:aspectj-autoproxy proxy-target-class="true"></aop:aspectj-autoproxy>-->
+
+<!--    <aop:config>
+        <aop:advisor id="performanceAdvisor"
+                     pointcut-ref="targetPointcut"
+                     advice-ref="performanceMethodInterceptor"
+                    order="1"/>
+    </aop:config>
+
+        <bean id="targetPointcut" class="org.springframework.aop.support.JdkRegexpMethodPointcut">
+        <property name="pattern" value="."></property>
+    </bean>
+
+    -->
+
+
+    <aop:config>
+        <aop:advisor id="performanceAdvisor"
+                     pointcut="execution(public void *.execute())"
+                     advice-ref="performanceMethodInterceptor"
+                     order="1"/>
+    </aop:config>
+
+
+    <bean id="performanceMethodInterceptor" class="com.mouse.autumn.basicioc.newaop.schemaaop.advisor.PerformanceMethodInterceptor"></bean>
+
+    <bean id="task" class="com.mouse.autumn.basicioc.newaop.schemaaop.advisor.MockTask"></bean>
+
+
+
+</beans>
