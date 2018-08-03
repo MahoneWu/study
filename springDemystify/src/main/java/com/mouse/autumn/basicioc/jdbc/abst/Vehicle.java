@@ -1,9 +1,9 @@
-package com.mouse.autumn.basicioc.jdbc;
+package com.mouse.autumn.basicioc.jdbc.abst;
 
 /**
  * Created by Mahone Wu on 2018/7/31.
  */
-public abstract class Vehicle{
+public abstract class Vehicle {
 
 
     public final void drive(){
