@@ -10,7 +10,6 @@ package com.mouse.autumn.chapter02.observer;
  */
 public class ConcreteObserver implements IObserver {
 
-
     @Override
     public void update(Event event) {
         System.out.println("observe receives information");
