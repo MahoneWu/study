@@ -12,6 +12,7 @@
     <module>springDemystify</module>
       <module>springmvc</module>
       <module>JavaPerformOptimization</module>
+      <module>accumulate</module>
   </modules>
 
   <name>Maven</name>
