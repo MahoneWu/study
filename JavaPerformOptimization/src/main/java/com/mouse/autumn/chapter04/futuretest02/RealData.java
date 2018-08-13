@@ -1,15 +1,23 @@
-package com.mouse.autumn.chapter04.futuretest;
+package com.mouse.autumn.chapter04.futuretest02;
+
+import java.util.concurrent.Callable;
 
 /**
  * Created by Mahone Wu on 2018/8/13.
  */
-public class RealData {
+public class RealData implements Callable<String> {
 
 
-    protected final String result;
+    protected  String result;
 
 
     public RealData(String result) {
+        this.result = result;
+    }
+
+
+    @Override
+    public String call() throws Exception {
         StringBuffer sb = new StringBuffer();
         for (int i=0;i<10;i++) {
             sb.append(result);
@@ -19,11 +27,7 @@ public class RealData {
 
             }
         }
-
-        this.result = sb.toString();
+        return  sb.toString();
     }
 
-    public String getResult() {
-        return result;
-    }
 }
