@@ -1,7 +1,6 @@
 package com.mouse.autumn.chapter04.semaphoretest;
 
 import java.util.concurrent.Semaphore;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author wuhao Mahone Wu
