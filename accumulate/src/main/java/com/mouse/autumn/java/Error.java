@@ -28,7 +28,6 @@ public class Error {
             System.out.println("错误信息e = " +ex);
         }*/
 
-
         int i = 0;
         String x = null;
         while (i < 100000000) {

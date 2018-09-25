@@ -5,7 +5,6 @@ package com.mouse.autumn.java;
  */
 public class Runner {
 
-
     public static void main(String[] args) {
         int count = 1;
         int pageSize = 1000;
