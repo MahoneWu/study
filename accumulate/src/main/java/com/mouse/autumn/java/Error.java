@@ -1,7 +1,8 @@
-package com.mouse.autumn.basicioc;
+package com.mouse.autumn.java;
 
 /**
  * Created by Mahone Wu on 2018/8/6.
+ * https://blog.csdn.net/taotao4/article/details/43918131
  */
 public class Error {
 
@@ -44,13 +45,11 @@ public class Error {
             }
             i++;
         }
-
     }
-
 
 
     private static void getNPE(String x) {
         System.out.println("当前字母为：" + x.toString());
     }
 
-    }
+}
