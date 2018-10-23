@@ -13,6 +13,8 @@
       <module>springmvc</module>
       <module>JavaPerformOptimization</module>
       <module>accumulate</module>
+      <module>javatest</module>
+    <module>leetcode</module>
   </modules>
 
   <name>Maven</name>
