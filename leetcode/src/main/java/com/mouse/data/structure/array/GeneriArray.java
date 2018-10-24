@@ -106,26 +106,90 @@ public class GeneriArray<T> {
         for (int i = size - 1; i > index; --i) {
             data[i + 1] = data[i];
         }
-
+        data[index] = e;
+        size++;
     }
 
-    private void resize(int i) {
+
+    public void addFirst(T e){
+        add(0, e);
+    }
+
+    public void addLast(T e){
+        add(size, e);
+    }
+
+    public T remove(int index){
+        checkIndex(index);
+        T ret = data[index];
+
+        for (int i = index+1;i<size;i++) {
+            data[i - 1] = data[i];
+        }
+        size--;
+        data[size] = null;
+        return ret;
+    }
+
+    /**
+     * 扩容方法，时间复杂度O(n)
+     * @param capacity
+     */
+    private void resize(int capacity) {
+        T[] newData =(T[]) new Object[capacity];
+        for (int i = 0; i < size; i++) {
+            newData[i] = data[i];
+        }
+        data = newData;
+    }
+
+    public T removeFirst(){
+        return remove(0);
+    }
 
 
+    public T removeLast(){
+        return remove(size - 1);
+    }
+
+    public void removeElement(T  e){
+        int index = find(e);
+        if (index != -1) {
+            remove(index);
+        }
     }
 
 
     private void checkIndex(int index) {
-        if(index < 9 || index > size){
+        if(index < 0 || index > size){
             throw new IllegalArgumentException("Add failed! required index >=0 and index  <= size");
         }
     }
 
 
-    public static void main(String[] args) {
-
-
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append(String.format("Array size = %d, capacity = %d \n", size, data.length));
+        builder.append('[');
+        for (int i = 0; i < size; i++) {
+            builder.append(data[i]);
+            if (i != size - 1) {
+                builder.append(", ");
+            }
+        }
+        builder.append(']');
+        return builder.toString();
     }
 
 
+    public static void main(String[] args) {
+        int[] arr = new int[5];
+        arr[0] = 1;
+        arr[0] = 2;
+        System.out.println(arr);
+        for(int i = 0 ; i <5;i++){
+            System.out.println(arr[i]);
+        }
+    }
 }
